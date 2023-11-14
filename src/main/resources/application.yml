@@ -1,0 +1,33 @@
+server:
+    port: 8089
+
+spring:
+    datasource:
+        driver-class-name: net.sf.log4jdbc.sql.jdbcapi.DriverSpy
+        url: jdbc:log4jdbc:postgresql://jakkawa.cq0nmw7hhqge.ap-northeast-2.rds.amazonaws.com:5432/jis
+        username: jis
+        password: wpdldkdldptm_1
+    servlet:
+      multipart:
+          max-file-size: 100MB
+          max-request-size: 100MB
+
+springdoc:
+    default-consumes-media-type: application/json
+    default-produces-media-type: application/json
+    swagger-ui:
+        path: /
+    paths-to-match:
+        - /**
+
+logging:
+    level:
+        sqlonly: false
+        sql: false
+        resultset: false
+        statement: false
+        preparedstatement: false
+        datasource: false
+        hibernate: trace
+
+
